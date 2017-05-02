@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace SentenceParser.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class ValuesController : ApiController
     {
         //GET api/values/sentence

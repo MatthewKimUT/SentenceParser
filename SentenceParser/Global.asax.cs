@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SentenceParser.MessageHandlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +15,8 @@ namespace SentenceParser
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            GlobalConfiguration.Configuration.MessageHandlers.Add(new APIKeyHandler());
+            GlobalConfiguration.Configuration.MessageHandlers.Add(new AuthHandler());
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
